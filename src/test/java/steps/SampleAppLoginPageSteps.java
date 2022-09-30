@@ -16,8 +16,13 @@ public class SampleAppLoginPageSteps {
         sampleAppLoginPage.clickLoginButton();
     }
 
-    @Step("Check login status")
-    public void checkLoginStatus() {
-    sampleAppLoginPage.checkLoginStatus();
+    @Step("Check <failedLogin,successLogin,loggedOut> login status")
+    public void checkLoginStatus(String status) {
+        sampleAppLoginPage.checkLoginStatus(status);
+    }
+
+    @Step("Enter <username> and <password>")
+    public void implementation1(String username, String pass) {
+
     }
 }

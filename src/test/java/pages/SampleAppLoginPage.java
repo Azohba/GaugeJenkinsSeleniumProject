@@ -33,10 +33,21 @@ public class SampleAppLoginPage extends BaseActions {
         waitUntilVisibleAndClick(logInBTN);
     }
 
-    public void checkLoginStatus(){
+    public void checkLoginStatus(String status){
         waitUntilElementVisible(logInStatusLBL);
         String loginStatus = getText(logInStatusLBL);
-            Assert.assertEquals("Login success",loginStatus,"Welcome, "+userInfoModel.getUserName()+"!");
+        switch (status){
+            case "successLogin":
+                Assert.assertEquals("Invalid Username/Password",loginStatus,"Welcome, "+userInfoModel.getUserName()+"!");
+                break;
+            case "failedLogin":
+                Assert.assertEquals("Error message did not match!!!","Invalid username/password",loginStatus);
+                break;
+            case "loggedOut":
+                Assert.assertEquals("Error message did not match!!!","User logged out.",loginStatus);
+                break;
+        }
+
         }
     }
 

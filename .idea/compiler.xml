@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="SpriteCloud" options="--add-modules java.base,java.logging" />
+      <module name="SpriteCloud" options="" />
     </option>
   </component>
 </project>

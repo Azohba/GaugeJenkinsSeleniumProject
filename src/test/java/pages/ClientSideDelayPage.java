@@ -1,6 +1,5 @@
 package pages;
 
-import models.ClientDelayPageModel;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import utils.BaseActions;
@@ -12,11 +11,9 @@ public class ClientSideDelayPage extends BaseActions {
     private static By successMessageLBL = By.cssSelector(".bg-success");
 
 
-    ClientDelayPageModel clientDelayPageModel = new ClientDelayPageModel();
      Integer timez;
     public void clickTriggerButton(Integer times){
         timez = times;
-        clientDelayPageModel.setTimes(times);
         String pageTitle = getTitle();
         Assert.assertEquals("You're in the wrong page","Client Side Delay",pageTitle);
         int i = 1;
