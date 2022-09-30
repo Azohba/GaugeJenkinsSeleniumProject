@@ -19,7 +19,6 @@ public class DynamicTablePage extends BaseActions {
           }
        }
        int i = 1;
-       while ()
 
     }
 }
