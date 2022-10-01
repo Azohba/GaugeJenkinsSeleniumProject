@@ -1,6 +1,8 @@
 package utils;
 
+import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.AfterSuite;
+import com.thoughtworks.gauge.BeforeScenario;
 import com.thoughtworks.gauge.BeforeSuite;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,9 +18,13 @@ public class BaseActions {
     @BeforeSuite
     public WebDriver getWebDriver(){
         webDriver = DriverSetup.initializeDriver();
-        webDriver.navigate().to(System.getenv("URL"));
         wait = new WebDriverWait(webDriver, 30);
         return webDriver;
+    }
+
+    @BeforeScenario
+    public void goTo(){
+        webDriver.navigate().to(System.getenv("URL"));
     }
 
     @AfterSuite
