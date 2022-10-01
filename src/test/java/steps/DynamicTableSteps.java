@@ -1,7 +1,7 @@
 package steps;
 
 import com.thoughtworks.gauge.Step;
-import pages.DynamicTablePage;
+import pageObjects.DynamicTablePage;
 
 public class DynamicTableSteps {
     DynamicTablePage dynamicTablePage = new DynamicTablePage();

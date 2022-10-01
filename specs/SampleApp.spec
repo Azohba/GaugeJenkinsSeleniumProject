@@ -4,7 +4,6 @@
 Scenario - 1 Sample App : Success login
 -------------------------------
 tags: sampleApp,login
-*Open home page
 *Click "sampleapp" href link
 *Login positive steps concept
 *Check "successLogin" login status
@@ -14,7 +13,6 @@ tags: sampleApp,login
 Scenario - 2 Sample App : Give username&password null
 -------------------------------
 tags: sampleApp,loginNegative
-*Open home page
 *Click "sampleapp" href link
 *Enter " " and " "
 *Click Log In button
@@ -24,7 +22,6 @@ tags: sampleApp,loginNegative
 Scenario - 3 Sample App : Give password null
 -------------------------------
 tags: sampleApp,loginNegative
-*Open home page
 *Click "sampleapp" href link
 *Enter "asdd" and " "
 *Click Log In button
@@ -33,7 +30,6 @@ tags: sampleApp,loginNegative
 Scenario - 4 Sample App : Give username null and true password
 -------------------------------
 tags: sampleApp,loginNegative
-*Open home page
 *Click "sampleapp" href link
 *Enter "" and "pwd"
 *Click Log In button

@@ -1,7 +1,8 @@
 package steps;
 
 import com.thoughtworks.gauge.Step;
-import pages.HomePage;
+import pageObjects.HomePage;
+
 
 public class HomePageSteps {
     HomePage homePage = new HomePage();

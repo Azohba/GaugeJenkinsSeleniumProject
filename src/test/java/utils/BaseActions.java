@@ -2,7 +2,6 @@ package utils;
 
 import com.thoughtworks.gauge.AfterSuite;
 import com.thoughtworks.gauge.BeforeSuite;
-import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,15 +9,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.logging.Logger;
-
 public class BaseActions {
     public static WebDriver webDriver;
     public static WebDriverWait wait;
 
     @BeforeSuite
     public WebDriver getWebDriver(){
-        webDriver = DriverSetup.setup();
+        webDriver = DriverSetup.initializeDriver();
+        webDriver.navigate().to(System.getenv("URL"));
         wait = new WebDriverWait(webDriver, 30);
         return webDriver;
     }

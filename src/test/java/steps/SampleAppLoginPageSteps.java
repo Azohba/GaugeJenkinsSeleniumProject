@@ -1,7 +1,7 @@
 package steps;
 
 import com.thoughtworks.gauge.Step;
-import pages.SampleAppLoginPage;
+import pageObjects.SampleAppLoginPage;
 
 public class SampleAppLoginPageSteps {
     SampleAppLoginPage sampleAppLoginPage = new SampleAppLoginPage();

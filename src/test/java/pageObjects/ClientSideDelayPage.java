@@ -1,8 +1,10 @@
-package pages;
+package pageObjects;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import utils.BaseActions;
+
+
 
 public class ClientSideDelayPage extends BaseActions {
 
@@ -25,7 +27,7 @@ public class ClientSideDelayPage extends BaseActions {
     }
 
      public void checkSuccessMessage(){
-        Integer messageCount = webDriver.findElements(successMessageLBL).size();
+        Integer messageCount = BaseActions.webDriver.findElements(successMessageLBL).size();
         Assert.assertEquals("Message Count did not match",timez,messageCount);
         String message = getText(successMessageLBL);
         Assert.assertEquals("Success Message cannot displayed","Data calculated on the client side.",message);

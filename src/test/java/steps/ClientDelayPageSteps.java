@@ -1,7 +1,7 @@
 package steps;
 
 import com.thoughtworks.gauge.Step;
-import pages.ClientSideDelayPage;
+import pageObjects.ClientSideDelayPage;
 
 public class ClientDelayPageSteps {
     ClientSideDelayPage clientDelayPage = new ClientSideDelayPage();

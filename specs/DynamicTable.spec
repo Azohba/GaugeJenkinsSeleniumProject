@@ -7,6 +7,5 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
      
 Scenario 1 : Check Chrome Cpu load
 ----------------------------------
-*Open home page
 *Click "dynamictable" href link
 *Get Chrome Cpu value

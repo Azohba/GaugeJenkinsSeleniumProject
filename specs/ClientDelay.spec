@@ -7,7 +7,6 @@ Every heading in this file denotes a scenario. Every bulleted point denotes a st
      
 Scenario 1 : Client Delay - Only one click check
 ----------------------------
-*Open home page
 *Click "clientdelay" href link
 *Click "1" times to Client Side button
 *Check success messages
@@ -15,7 +14,6 @@ Scenario 1 : Client Delay - Only one click check
 
 Scenario 2 : Client Delay - Two click the button
 -----------------------------------
-*Open home page
 *Click "clientdelay" href link
 *Click "2" times to Client Side button
 *Check success messages

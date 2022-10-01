@@ -1,4 +1,4 @@
-package pages;
+package pageObjects;
 
 import models.UserInfoModel;
 import org.junit.Assert;

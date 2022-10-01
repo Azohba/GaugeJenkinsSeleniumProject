@@ -1,6 +1,5 @@
 package utils;
 
-import com.thoughtworks.gauge.BeforeSuite;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +15,7 @@ public class DriverSetup {
     static String browser = System.getenv("browser");
     static String env = System.getenv("environment");
 
-    public static WebDriver setup() {
+    public static WebDriver initializeDriver() {
         switch (env) {
             case "MobileWeb":
                 if (browser.equalsIgnoreCase("Chrome")) {
