@@ -1,4 +1,4 @@
-# SpriteCloud Test Scenarios
+# SampleApp Test Scenarios
 
 
 Scenario - 1 Sample App : Success login
