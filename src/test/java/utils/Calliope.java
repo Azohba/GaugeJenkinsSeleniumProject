@@ -11,7 +11,7 @@ public class Calliope {
                 .build();
         MediaType mediaType = MediaType.parse("multipart/form-data");
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("file","/C:/Users/onur.tarar/IdeaProjects/SpriteCloud/reports/xml-report/result.xml",
+                .addFormDataPart("file","/SpriteCloud/reports/xml-report/result.xml",
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File("/C:/Users/onur.tarar/IdeaProjects/SpriteCloud/reports/xml-report/result.xml")))
                 .build();
