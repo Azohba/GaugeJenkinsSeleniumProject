@@ -1,6 +1,5 @@
 package utils;
 
-import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.AfterSuite;
 import com.thoughtworks.gauge.BeforeScenario;
 import com.thoughtworks.gauge.BeforeSuite;
@@ -11,7 +10,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+
 public class BaseActions {
+    Calliope calliope = new Calliope();
+
     public static WebDriver webDriver;
     public static WebDriverWait wait;
 
@@ -28,8 +31,9 @@ public class BaseActions {
     }
 
     @AfterSuite
-    public void tearDrop(){
+    public void tearDrop() throws IOException {
         webDriver.quit();
+        calliope.sendResultsToCalliope();
     }
 
     public void waitUntilElementVisible(By by) {
