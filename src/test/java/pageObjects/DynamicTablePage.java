@@ -13,6 +13,7 @@ public class DynamicTablePage extends BaseActions {
         for (int i=1;i<=5;i++){
           if (BaseActions.webDriver.findElement(By.xpath("//*[@role=\"columnheader\"]["+i+"]")).getText().equalsIgnoreCase("CPU")){
               columnNumber = String.valueOf(i);
+              logger.info("Find CPU column : ..." + columnNumber);
               break;
           }
        }

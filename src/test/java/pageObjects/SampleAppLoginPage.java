@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class SampleAppLoginPage extends BaseActions {
 
-    private static Logger logger = Logger.getLogger(String.valueOf(BaseActions.class));
+
     UserInfoModel userInfoModel = new UserInfoModel();
 
     private static By usernameTXT = By.name("UserName");
@@ -18,6 +18,7 @@ public class SampleAppLoginPage extends BaseActions {
     private static By logInStatusLBL = By.id("loginstatus");
 
     public void enterUserNameAndPassword(){
+        logger.info("Insert Login credentials...");
         waitUntilElementVisible(usernameTXT);
         String loginStatus = getText(logInStatusLBL);
         if (loginStatus.equalsIgnoreCase("User logged out.")) {
@@ -30,10 +31,12 @@ public class SampleAppLoginPage extends BaseActions {
     }
 
     public void clickLoginButton(){
+        logger.info("Click Login Button...");
         waitUntilVisibleAndClick(logInBTN);
     }
 
     public void checkLoginStatus(String status){
+        logger.info("Check login status...");
         waitUntilElementVisible(logInStatusLBL);
         String loginStatus = getText(logInStatusLBL);
         switch (status){

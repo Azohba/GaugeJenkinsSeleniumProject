@@ -11,10 +11,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class BaseActions {
     Calliope calliope = new Calliope();
-
+    public static Logger logger = Logger.getLogger(String.valueOf(BaseActions.class));
     public static WebDriver webDriver;
     public static WebDriverWait wait;
 
@@ -27,14 +28,17 @@ public class BaseActions {
 
     @BeforeScenario
     public void goTo(){
+        logger.info("Open to " + System.getenv("URL"));
         webDriver.navigate().to(System.getenv("URL"));
     }
 
     @AfterSuite
     public void tearDrop() throws IOException {
         webDriver.quit();
+        logger.info("Webdriver is closed!!");
         calliope.sendResultsToCalliope();
     }
+
 
     public void waitUntilElementVisible(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
