@@ -11,9 +11,9 @@ public class Calliope {
                 .build();
         MediaType mediaType = MediaType.parse("multipart/form-data");
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("file","reports/xml-report/*.xml",
+                .addFormDataPart("file","**/reports/xml-report/*.xml",
                         RequestBody.create(MediaType.parse("application/octet-stream"),
-                                new File("reports/xml-report/*.xml")))
+                                new File("**/reports/xml-report/*.xml")))
                 .build();
         Request request = new Request.Builder()
                 .url("https://app.calliope.pro/api/v2/profile/4508/import/junit")
