@@ -3,6 +3,7 @@ package utils;
 import com.thoughtworks.gauge.AfterSuite;
 import com.thoughtworks.gauge.BeforeScenario;
 import com.thoughtworks.gauge.BeforeSuite;
+import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,11 +36,14 @@ public class BaseActions {
     @AfterSuite
     public void tearDrop() throws IOException {
         webDriver.quit();
-        logger.info("Webdriver is closed!!");
-        calliope.sendResultsToCalliope();
+        logger.info("Webdriver closed!!");
+
     }
 
-
+    @AfterAll
+    public void sendCalliopeReport() throws IOException {
+        calliope.sendResultsToCalliope();
+    }
     public void waitUntilElementVisible(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }

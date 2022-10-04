@@ -6,12 +6,14 @@ import java.io.File;
 import java.io.IOException;
 
 public class Calliope {
+
+
     public void sendResultsToCalliope() throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         MediaType mediaType = MediaType.parse("multipart/form-data");
         RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
-                .addFormDataPart("file",System.getenv("calliopeURL"),
+                .addFormDataPart("file", System.getenv("calliopeURL"),
                         RequestBody.create(MediaType.parse("application/octet-stream"),
                                 new File(System.getenv("calliopeURL"))))
                 .build();
