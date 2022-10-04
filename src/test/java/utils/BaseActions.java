@@ -42,6 +42,7 @@ public class BaseActions {
 
     @AfterAll
     public void sendCalliopeReport() throws IOException {
+        logger.info("After All Test");
         calliope.sendResultsToCalliope();
     }
     public void waitUntilElementVisible(By by) {
