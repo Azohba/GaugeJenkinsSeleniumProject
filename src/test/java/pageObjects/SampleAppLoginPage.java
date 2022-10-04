@@ -43,7 +43,7 @@ public class SampleAppLoginPage extends BaseActions {
             case "successLogin":
                 Assert.assertEquals("Invalid Username/Password",loginStatus,"Welcome, "+userInfoModel.getUserName()+"!");
                 break;
-            case "failedLogin":
+            case "faileDdLogin":
                 Assert.assertEquals("Error message did not match!!!","Invalid username/password",loginStatus);
                 break;
             case "loggedOut":
