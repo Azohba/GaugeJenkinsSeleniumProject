@@ -3,6 +3,7 @@ package utils;
 import com.thoughtworks.gauge.AfterSuite;
 import com.thoughtworks.gauge.BeforeScenario;
 import com.thoughtworks.gauge.BeforeSuite;
+import org.junit.After;
 import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,7 @@ public class BaseActions {
         webDriver.navigate().to(System.getenv("URL"));
     }
 
+
     @AfterSuite
     public void tearDrop() throws IOException {
         webDriver.quit();
@@ -40,7 +42,7 @@ public class BaseActions {
 
     }
 
-    @AfterAll
+    @After
     public void sendCalliopeReport() throws IOException {
         logger.info("After All Test");
         calliope.sendResultsToCalliope();
