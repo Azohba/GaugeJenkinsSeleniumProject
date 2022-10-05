@@ -21,7 +21,7 @@ public class BaseActions {
 
     @BeforeSuite
     public WebDriver getWebDriver(){
-       // deleteScreenShots();
+        deleteScreenShots();
         webDriver = DriverSetup.initializeDriver();
         wait = new WebDriverWait(webDriver, 30);
         return webDriver;
