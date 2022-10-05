@@ -3,26 +3,25 @@ package utils;
 import com.thoughtworks.gauge.AfterSuite;
 import com.thoughtworks.gauge.BeforeScenario;
 import com.thoughtworks.gauge.BeforeSuite;
-import org.junit.After;
-import org.junit.jupiter.api.AfterAll;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.thoughtworks.gauge.Gauge;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.logging.Logger;
 
 public class BaseActions {
-    Calliope calliope = new Calliope();
     public static Logger logger = Logger.getLogger(String.valueOf(BaseActions.class));
     public static WebDriver webDriver;
     public static WebDriverWait wait;
 
     @BeforeSuite
     public WebDriver getWebDriver(){
+        deleteScreenShots();
         webDriver = DriverSetup.initializeDriver();
         wait = new WebDriverWait(webDriver, 30);
         return webDriver;
@@ -37,16 +36,13 @@ public class BaseActions {
 
     @AfterSuite
     public void tearDrop() throws IOException {
-        webDriver.quit();
+        if (webDriver!=null){
+            webDriver.quit();
+        }
         logger.info("Webdriver closed!!");
 
     }
 
-    @After
-    public void sendCalliopeReport() throws IOException {
-        logger.info("After All Test");
-        calliope.sendResultsToCalliope();
-    }
     public void waitUntilElementVisible(By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
@@ -82,6 +78,17 @@ public class BaseActions {
         org.openqa.selenium.interactions.Actions actions = new org.openqa.selenium.interactions.Actions(getWebDriver());
         actions.moveToElement(getWebDriver().findElement(by)).build().perform();
         return getWebDriver().findElement(by);
+    }
+
+     void deleteScreenShots(){
+         File folder = new File(".gauge/screenshots");
+         File fList[] = folder.listFiles();
+
+         for (File f : fList) {
+             if (f.getName().endsWith(".png")) {
+                 f.delete();
+             }}
+
     }
 
 }
