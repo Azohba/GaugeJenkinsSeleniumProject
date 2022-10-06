@@ -50,10 +50,10 @@ $ Junit report plugin
 # Run
 
 Runs the test locally, below command triggers to run all test cases
-''' mvn test '''
+``` mvn test ```
 
 Runs the tests on Jenkins
-''' java -jar jenkins-cli.jar -s http://localhost:8080/ -auth {{jenkins_username}}:{{jenkins_password}} build SpriteCloud '''
+``` java -jar jenkins-cli.jar -s http://localhost:8080/ -auth {{jenkins_username}}:{{jenkins_password}} build SpriteCloud ```
 
  
 # Project Structure
