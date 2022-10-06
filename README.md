@@ -34,17 +34,23 @@ Precondition: Ensure all required dependencies are installed
 1: Java& Gauge and Maven have to be installed and configured path variables for Windows
 
 2: Clone the repository
+
 $ git clone https://github.com/Azohba/SpriteCloud.git
 
 3: Install dependencies
+
 $ gauge init java
 
 4: Install Jenkins to run the tests in a CI/CD environment
+
 $ Follow the steps in the article for Windows setup -> https://www.blazemeter.com/blog/how-to-install-jenkins-on-windows
+
 $ Follow the steps in the article for Mac setup -> https://www.knowledgehut.com/blog/devops/install-jenkins-on-mac
 
 5: Install Jenkins plugins in order to trigger for creating test results
+
 $ Maven plugin 
+
 $ Junit report plugin
 
 # Run
@@ -59,15 +65,19 @@ Runs the tests on Jenkins
 # Project Structure
 
 All BDD Features (test cases) are stored in here.   
+
 $ /specs  
 
 Storage of static data (some constants) such as website base Url. Can be accessed by the following path
+
 $ env/default/user.properties
 
 Page helpers are stored in here. This is where custom Selenium commands locate
+
 $ utils/BaseActions.java
 
 All page related element selectors are stored in here.  
+
 $ src/test/java/pageObjects
 
  
