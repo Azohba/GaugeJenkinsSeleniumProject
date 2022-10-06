@@ -1,21 +1,29 @@
-SpriteCloud UI Test | Java & Gauge & Selenium
+# SpriteCloud UI Test | Java & Gauge & Selenium
 
 UI Test cases were implemented by using Gauge within BDD test methodology, Selenium, Java language and Maven framework.
 
 # Requirement/s
 
 Gauge path&variables
+
 Java path&variables
+
 Jenkins local
+
 Calliope account
 
 # Versions / Dependencies
 
 Java: 17.03
+
 Gauge: 1.4.3
+
 Selenium: 3.141.59
+
 Junit: 4.13.1
+
 Apache-Maven: 3.8.4
+
 Jenkins: 2.361.1
 
 
@@ -42,10 +50,10 @@ $ Junit report plugin
 # Run
 
 Runs the test locally, below command triggers to run all test cases
-$ mvn test
+''' mvn test '''
 
 Runs the tests on Jenkins
-$ java -jar jenkins-cli.jar -s http://localhost:8080/ -auth {{jenkins_username}}:{{jenkins_password}} build SpriteCloud
+''' java -jar jenkins-cli.jar -s http://localhost:8080/ -auth {{jenkins_username}}:{{jenkins_password}} build SpriteCloud '''
 
  
 # Project Structure
