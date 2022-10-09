@@ -3,7 +3,6 @@ package utils;
 import com.thoughtworks.gauge.AfterSuite;
 import com.thoughtworks.gauge.BeforeScenario;
 import com.thoughtworks.gauge.BeforeSuite;
-import com.thoughtworks.gauge.Gauge;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.logging.Logger;
 
 public class BaseActions {
@@ -40,6 +38,9 @@ public class BaseActions {
             webDriver.quit();
         }
         logger.info("Webdriver closed!!");
+        Calliope calliope = new Calliope();
+        calliope.zipSS();
+        calliope.setRequest();
 
     }
 
@@ -92,8 +93,6 @@ public class BaseActions {
         }catch (Exception e){
             logger.info("Screenshots cannot deleted");
         }
-
-
     }
 
 }
