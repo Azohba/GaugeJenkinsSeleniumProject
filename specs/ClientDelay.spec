@@ -14,7 +14,7 @@ Scenario 1 : Client Delay - Only one click check
 
 Scenario 2 : Client Delay - Two click the button
 -----------------------------------
-*Click "clientdelay" href link
+*Click "clientfdelay" href link
 *Click "2" times to Client Side button
 *Check success messages
 

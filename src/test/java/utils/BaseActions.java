@@ -81,13 +81,18 @@ public class BaseActions {
     }
 
      void deleteScreenShots(){
-         File folder = new File(".gauge/screenshots");
-         File fList[] = folder.listFiles();
+        try{
+            File folder = new File(".gauge/screenshots");
+            File fList[] = folder.listFiles();
 
-         for (File f : fList) {
-             if (f.getName().endsWith(".png")) {
-                 f.delete();
-             }}
+            for (File f : fList) {
+                if (f.getName().endsWith(".png")) {
+                    f.delete();
+                }}
+        }catch (Exception e){
+            logger.info("Screenshots cannot deleted");
+        }
+
 
     }
 

@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import utils.BaseActions;
 
-import java.util.logging.Logger;
 
 public class SampleAppLoginPage extends BaseActions {
 
