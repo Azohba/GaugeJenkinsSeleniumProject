@@ -1,4 +1,4 @@
-# SpriteCloud UI Test | Java & Gauge & Selenium
+#  Java & Gauge & Selenium
 
 UI Test cases were implemented by using Gauge within BDD test methodology, Selenium, Java language and Maven framework.
 
@@ -34,8 +34,6 @@ Precondition: Ensure all required dependencies are installed
 1: Java& Gauge and Maven have to be installed and configured path variables for Windows
 
 2: Clone the repository
-
-$ git clone https://github.com/Azohba/SpriteCloud.git
 
 3: Install dependencies
 
